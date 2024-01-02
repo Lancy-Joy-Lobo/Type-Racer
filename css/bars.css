@@ -1,0 +1,19 @@
+.box {
+  margin-right: 2px;
+}
+
+#DivContainer {
+  display: flex;
+  height: 80vh;
+  text-align: center;
+  box-sizing: border-box;
+  justify-content: center;
+  padding-left: 20px;
+  padding-right: 20px;
+  width: 80%;
+}
+#boxContainer {
+  display: flex;
+  justify-content: center;
+  padding-top: 20px;
+}

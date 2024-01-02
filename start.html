@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sorting Visualiser</title>
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/nav.css" />
+    <link rel="stylesheet" href="css/bars.css" />
+
+    <script src="mergeSort.js"></script>
+    <script src="bubblesort.js"></script>
+    <script src="selectionSort.js"></script>
+    <script src="utils.js"></script>
+    <script src="insertionsort.js"></script>
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="navbarContainer">
+      <input type="button" onclick="Start()" id="button1" value="New Array" />
+      <div class="rangeContainer">
+        <label>Size</label>
+        <input
+          id="sizeSlider"
+          type="range"
+          min="15"
+          max="150"
+          step="3"
+          value="0"
+          oninput="Start(this.value)"
+        />
+
+        <label>Speed</label>
+        <input
+          type="range"
+          id="speedSlider"
+          step="4"
+          max="100"
+          min="10"
+          value="20"
+          oninput="ApplySpeed(this.value)"
+        />
+      </div>
+
+      <!-- </div> -->
+
+      <input type="button" onclick="SortArray(1)" value="Bubble Sort" />
+
+      <input type="button" onclick="SortArray(2)" value="Merge Sort" />
+
+      <input type="button" onclick="SortArray(3)" value="Insertion Sort" />
+
+      <input type="button" onclick="SortArray(4)" value="Selection Sort" />
+    </div>
+
+    <div id="boxContainer">
+      <div id="DivContainer"></div>
+    </div>
+  </body>
+</html>
