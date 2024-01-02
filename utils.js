@@ -71,10 +71,14 @@ function DisableFields(isEnabled) {
   //   console.log(isEnabled);
   document.getElementById("sizeSlider").disabled = isEnabled;
   var buttons = document.querySelectorAll('input[type="button"]');
-  for (let i = 0; i < buttons.length; i++) {
-    buttons[i].disabled = isEnabled;
-    buttons[i].style.backgroundColor = isEnabled ? "grey" : "#1a1e1c";
-    buttons[i].style.cursor = isEnabled ? "not-allowed" : "pointer";
+  const filteredButtons = Array.from(buttons).filter(
+    (button) => !button.id.includes("reset")
+  );
+
+  for (let i = 0; i < filteredButtons.length; i++) {
+    filteredButtons[i].disabled = isEnabled;
+    filteredButtons[i].style.backgroundColor = isEnabled ? "grey" : "#1a1e1c";
+    filteredButtons[i].style.cursor = isEnabled ? "not-allowed" : "pointer";
   }
 }
 
@@ -93,4 +97,8 @@ function Start(val = 0) {
   randomIntArrayInRange(arraySize);
   //create divs and generate bars
   GenerateDivs(arraySize, array);
+}
+
+function Reset() {
+  location.reload();
 }
